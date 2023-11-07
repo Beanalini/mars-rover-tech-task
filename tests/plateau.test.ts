@@ -8,6 +8,6 @@ describe("setPlateauDimensions", () => {
     //Act
     const plateauSize = setPlateauDimensions(plateauSizeInput);
     //Assert
-    expect(plateauSize).toBe(expectedPlateauSize);
+    expect(plateauSize).toEqual(expectedPlateauSize);
   });
 });
