@@ -1,13 +1,6 @@
 //rover functionality
 import { Plateau } from "../plateau";
-
-interface RoverPosition {
-  x: number;
-  y: number;
-  direction: Direction;
-}
-
-type Direction = "N" | "S" | "E" | "W";
+import { RoverPosition, Direction } from "./rover.types";
 
 export const processInitialPosition = (
   positionInput: string,

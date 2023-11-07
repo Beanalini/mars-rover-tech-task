@@ -11,4 +11,13 @@ describe("rover position and movement ", () => {
     //returns RoverPosition need to coerce value to a truthy value
     expect(!!onPlateau).toBe(true);
   });
+  test("rover has been placed outside the plateau boundary", () => {
+    //Arrange
+    const positionInput = "6 6 N";
+    //Act
+    const onPlateau = processInitialPosition(positionInput, plateauSize);
+    //Assert
+    //returns RoverPosition need to coerce value to a truthy value
+    expect(onPlateau).toBe(false);
+  });
 });
