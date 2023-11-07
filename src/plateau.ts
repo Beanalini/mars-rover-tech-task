@@ -1,6 +1,6 @@
 //Plateau functionality
 
-interface Plateau {
+export interface Plateau {
   x: number;
   y: number;
 }
