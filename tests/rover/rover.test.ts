@@ -8,6 +8,7 @@ describe("rover position and movement ", () => {
     //Act
     const onPlateau = processInitialPosition(positionInput, plateauSize);
     //Assert
+    //returns RoverPosition need to coerce value to a truthy value
     expect(!!onPlateau).toBe(true);
   });
 });
