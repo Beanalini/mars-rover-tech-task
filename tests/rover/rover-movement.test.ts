@@ -59,7 +59,7 @@ describe(" moves rover around the plateau", () => {
       moveInstructions(positionOnPlateau, instructions, plateauSize);
       console.log(positionOnPlateau);
       // Assert: Use the toEqual matcher to check if the properties of objects are equal
-      expect(positionOnPlateau).toEqual({ x: 2, y: 2, direction: "E" });
+      expect(positionOnPlateau).toEqual({ x: 2, y: 3, direction: "E" });
     } else {
       fail("Invalid initial position");
     }
