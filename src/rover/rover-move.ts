@@ -20,6 +20,9 @@ export const moveInstructions = (
     // Process each instruction here
     console.log(instruction);
     switch (instruction) {
+      case "L":
+        rotateRight(positionOnPlateau);
+        break;
       case "R":
         rotateRight(positionOnPlateau);
         break;
