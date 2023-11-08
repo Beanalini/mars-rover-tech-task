@@ -5,7 +5,7 @@ import { RoverPosition, Direction } from "./rover.types";
 export const processInitialPosition = (
   positionInput: string,
   plateauSize: Plateau
-): RoverPosition | false => {
+): RoverPosition | undefined => {
   const [x, y, direction] = positionInput.split(" ");
 
   const rovX = parseInt(x);
@@ -25,7 +25,8 @@ export const processInitialPosition = (
         direction: direction as Direction,
       };
     }
+  } else {
+    throw new Error(`Invalid initial position format: ${positionInput}`);
   }
-
-  return false; // Return false to indicate an invalid initial position
+  return undefined;
 };

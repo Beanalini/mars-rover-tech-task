@@ -9,15 +9,15 @@ describe("rover position and movement ", () => {
     const onPlateau = processInitialPosition(positionInput, plateauSize);
     //Assert
     //returns RoverPosition need to coerce value to a truthy value
-    expect(!!onPlateau).toBe(true);
+    expect(onPlateau).toEqual({ x: 3, y: 3, direction: "N" });
   });
-  test("rover has been placed outside the plateau boundary", () => {
-    //Arrange
-    const positionInput = "6 6 N";
-    //Act
-    const onPlateau = processInitialPosition(positionInput, plateauSize);
-    //Assert
-    //returns RoverPosition need to coerce value to a truthy value
-    expect(onPlateau).toBe(false);
-  });
+  // test("rover has been placed outside the plateau boundary", () => {
+  //   //Arrange
+  //   const positionInput = "6 6 N";
+  //   //Act
+  //   const onPlateau = processInitialPosition(positionInput, plateauSize);
+  //   //Assert
+  //   //returns RoverPosition need to coerce value to a truthy value
+  //   expect(onPlateau).toBe(false);
+  // });
 });

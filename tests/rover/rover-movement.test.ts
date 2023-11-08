@@ -1,5 +1,8 @@
 import { processMoveInput } from "../../src/rover/rover-move";
 import { processInitialPosition } from "../../src/rover/rover";
+import { moveInstructions } from "../../src/rover/rover-move";
+
+import { RoverPosition } from "../../src/rover/rover.types";
 
 const plateauSize = { x: 5, y: 5 };
 describe(" moves rover around the plateau", () => {
@@ -11,9 +14,10 @@ describe(" moves rover around the plateau", () => {
     const moveInstructions = processMoveInput(moveInput);
     //Assert
     //returns moveInstructions need to coerce value to a truthy value
-    expect(!!moveInstructions).toBe(true);
+    expect(moveInstructions).toEqual(["L", "M", "L", "M", "L", "M"]);
   });
-  test("return false if input instructions are invalid  ", () => {
+
+  test("throws an error if the instructions string is invalid  ", () => {
     //Arrange
     const moveInput = "LMSLMLMP/ ";
 
@@ -21,22 +25,25 @@ describe(" moves rover around the plateau", () => {
     const moveInstructions = processMoveInput(moveInput);
     //Assert
     //returns moveInstructions need to coerce value to a truthy value
-    expect(moveInstructions).toBe(false);
+    expect(moveInstructions).toThrow("Invalid instruction");
   });
-  // test("rover moves forward 1 grid space from inital placement position ", () => {
-  //   //Arrange
-  //   const positionInput = "3 3 N";
-  //   const positionOnPlateau = processInitialPosition(
-  //     positionInput,
-  //     plateauSize
-  //   );
 
-  //   const moveInput = "M";
-  //   const moveInstructions = processMoveInput(moveInput);
-  //   //run movement instruction
-  //   moveRover(positionOnPlateau, moveInstructions, plateauSize);
-  //   //Assert
-  //   //returns RoverPosition need to coerce value to a truthy value
-  //   expect(positionOnPlateau).toBe({ x: 1, y: 3, direction: "N" });
-  // });
+  test("rover moves forward 1 grid space from initial placement position", () => {
+    // Arrange
+    const positionInput = "3 3 N";
+    let positionOnPlateau = processInitialPosition(positionInput, plateauSize);
+
+    if (positionOnPlateau !== undefined) {
+      const moveInput = "M";
+      const instructions = processMoveInput(moveInput);
+
+      // Act: Run movement instruction
+      moveInstructions(positionOnPlateau, instructions, plateauSize);
+      console.log(positionOnPlateau);
+      // Assert: Use the toEqual matcher to check if the properties of objects are equal
+      expect(positionOnPlateau).toEqual({ x: 3, y: 4, direction: "N" });
+    } else {
+      fail("Invalid initial position");
+    }
+  });
 });
