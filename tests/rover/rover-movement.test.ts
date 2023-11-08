@@ -46,4 +46,22 @@ describe(" moves rover around the plateau", () => {
       fail("Invalid initial position");
     }
   });
+  test("rover moves forward and rotates right by 90 degrees", () => {
+    // Arrange
+    const positionInput = "1 2 N";
+    let positionOnPlateau = processInitialPosition(positionInput, plateauSize);
+
+    if (positionOnPlateau !== undefined) {
+      const moveInput = "MRM";
+      const instructions = processMoveInput(moveInput);
+
+      // Act: Run movement instruction
+      moveInstructions(positionOnPlateau, instructions, plateauSize);
+      console.log(positionOnPlateau);
+      // Assert: Use the toEqual matcher to check if the properties of objects are equal
+      expect(positionOnPlateau).toEqual({ x: 2, y: 2, direction: "E" });
+    } else {
+      fail("Invalid initial position");
+    }
+  });
 });
