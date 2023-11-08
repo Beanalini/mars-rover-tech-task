@@ -9,8 +9,17 @@ describe(" moves rover around the plateau", () => {
     //Act: run movement instructions
     const moveInstructions = processMoveInput(moveInput);
     //Assert
-
-    //returns RoverPosition need to coerce value to a truthy value
+    //returns moveInstructions need to coerce value to a truthy value
     expect(!!moveInstructions).toBe(true);
+  });
+  test("return false if input instructions are invalid  ", () => {
+    //Arrange
+    const moveInput = "LMSLMLMP/ ";
+
+    //Act: run movement instructions
+    const moveInstructions = processMoveInput(moveInput);
+    //Assert
+    //returns moveInstructions need to coerce value to a truthy value
+    expect(moveInstructions).toBe(false);
   });
 });
