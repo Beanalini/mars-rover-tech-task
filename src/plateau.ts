@@ -6,8 +6,7 @@ export interface Plateau {
 }
 
 export const setPlateauDimensions = (plateauSizeInput: string): Plateau => {
-  const [x, y] = plateauSizeInput.split(" "); //destructure
-  console.log(x, y);
+  const [x, y] = plateauSizeInput.split(" ");
   if (x && y) {
     return {
       x: parseInt(x),

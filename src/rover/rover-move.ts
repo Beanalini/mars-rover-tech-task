@@ -17,8 +17,6 @@ export const moveInstructions = (
   plateauSize: Plateau
 ): void => {
   for (const instruction of instructions) {
-    // Process each instruction here
-    console.log(instruction);
     switch (instruction) {
       case "L":
         rotateLeft(positionOnPlateau);
@@ -28,7 +26,6 @@ export const moveInstructions = (
         break;
       case "M":
         moveRover(positionOnPlateau, plateauSize);
-        console.log("moving rover");
         break;
       default:
         console.error("Invalid movement instruction");

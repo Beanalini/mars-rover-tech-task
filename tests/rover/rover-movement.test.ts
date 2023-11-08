@@ -66,7 +66,6 @@ describe(" evaluates rover movement instructions on the plateau", () => {
 
       // Act: Run movement instruction
       moveInstructions(positionOnPlateau, instructions, plateauSize);
-      console.log(positionOnPlateau);
       // Assert: Use the toEqual matcher to check if the properties of objects are equal
       expect(positionOnPlateau).toEqual({ x: 4, y: 5, direction: "W" });
     } else {
@@ -84,7 +83,6 @@ describe(" evaluates rover movement instructions on the plateau", () => {
 
       // Act: Run movement instruction
       moveInstructions(positionOnPlateau, instructions, plateauSize);
-      console.log(positionOnPlateau);
       // Assert: Use the toEqual matcher to check if the properties of objects are equal
       expect(positionOnPlateau).toEqual({ x: 2, y: 3, direction: "E" });
     } else {
@@ -102,7 +100,6 @@ describe(" evaluates rover movement instructions on the plateau", () => {
 
       // Act: Run movement instruction
       moveInstructions(positionOnPlateau, instructions, plateauSize);
-      console.log(positionOnPlateau);
       // Assert: Use the toEqual matcher to check if the properties of objects are equal
       expect(positionOnPlateau).toEqual({ x: 2, y: 3, direction: "W" });
     } else {
@@ -120,8 +117,7 @@ describe(" evaluates rover movement instructions on the plateau", () => {
 
       // Act: Run movement instruction
       moveInstructions(positionOnPlateau, instructions, plateauSize);
-      console.log(positionOnPlateau);
-      // Assert: Use the toEqual matcher to check if the properties of objects are equal
+
       expect(positionOnPlateau).toEqual({ x: 1, y: 3, direction: "N" });
     } else {
       fail("Invalid initial position");
@@ -135,10 +131,8 @@ describe(" evaluates rover movement instructions on the plateau", () => {
     if (positionOnPlateau !== undefined) {
       const moveInput = "MMRMMRMRRM";
       const instructions = processMoveInput(moveInput);
-
       // Act: Run movement instruction
       moveInstructions(positionOnPlateau, instructions, plateauSize);
-      console.log(positionOnPlateau);
       // Assert: Use the toEqual matcher to check if the properties of objects are equal
       expect(positionOnPlateau).toEqual({ x: 5, y: 1, direction: "E" });
     } else {
