@@ -3,9 +3,9 @@ import { processMoveInput, moveInstructions } from "../src/rover/rover-move";
 import { processInitialPosition } from "../src/rover/rover";
 import { RoverPosition } from "../src/rover/rover.types";
 
-const gridSizeString = "10 10";
-const moveInput = "MRM";
-const positionInput = "1 2 N";
+const gridSizeString = "5 5";
+const moveInput = "MMRMMRMRRM";
+const positionInput = "3 3 E";
 
 const gridSize = setPlateauDimensions(gridSizeString);
 console.log(gridSize);

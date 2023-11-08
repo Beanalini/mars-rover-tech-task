@@ -31,7 +31,7 @@ export const moveInstructions = (
         console.log("moving rover");
         break;
       default:
-        throw new Error("Invalid instruction");
+        console.error("Invalid movement instruction");
     }
   }
 };
@@ -77,12 +77,12 @@ const moveRover = (position: RoverPosition, gridSize: Plateau): void => {
 
   switch (position.direction) {
     case "N":
-      if (y + 1 < gridSize.y) {
+      if (y + 1 <= gridSize.y) {
         position.y++;
       }
       break;
     case "E":
-      if (x + 1 < gridSize.x) {
+      if (x + 1 <= gridSize.x) {
         position.x++;
       }
       break;
