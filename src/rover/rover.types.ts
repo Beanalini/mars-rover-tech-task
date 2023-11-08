@@ -5,3 +5,5 @@ export interface RoverPosition {
 }
 
 export type Direction = "N" | "S" | "E" | "W";
+
+export type Instruction = "L" | "R" | "M";

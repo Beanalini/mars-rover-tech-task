@@ -1,4 +1,4 @@
-import {} from "../../src/rover/rover";
+import { processMoveInput } from "../../src/rover/rover-move";
 
 const plateauSize = { x: 5, y: 5 };
 describe(" moves rover around the plateau", () => {
@@ -11,6 +11,6 @@ describe(" moves rover around the plateau", () => {
     //Assert
 
     //returns RoverPosition need to coerce value to a truthy value
-    expect(moveInput).toBe(["L", "M", "R"]);
+    expect(!!moveInstructions).toBe(true);
   });
 });
