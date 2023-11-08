@@ -21,7 +21,7 @@ export const moveInstructions = (
     console.log(instruction);
     switch (instruction) {
       case "L":
-        rotateRight(positionOnPlateau);
+        rotateLeft(positionOnPlateau);
         break;
       case "R":
         rotateRight(positionOnPlateau);
@@ -33,6 +33,24 @@ export const moveInstructions = (
       default:
         throw new Error("Invalid instruction");
     }
+  }
+};
+
+const rotateLeft = (rover: RoverPosition): void => {
+  const { direction } = rover;
+  switch (direction) {
+    case "N":
+      rover.direction = "W";
+      break;
+    case "E":
+      rover.direction = "N";
+      break;
+    case "S":
+      rover.direction = "E";
+      break;
+    case "W":
+      rover.direction = "S";
+      break;
   }
 };
 
