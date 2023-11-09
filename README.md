@@ -5,7 +5,7 @@
 - [Approach](#approach)
 - [Next Steps](#next-steps)
 - [Tests](#tests)
-- [Installation](install)
+- [Installation](#install)
 - [Usage](#usage)
 - [How to Contribute](#constribute)
 
@@ -33,24 +33,27 @@ Movement instructions consist of a string of letters which are sent to the Rover
 
 ### Program Inputs
 
-The inputs to the Rover program are in the form of line inputs. The first line inputted into the program provides the upper-right coordinates, which defines the size of the grid since the lower left-side is assumed to be (0,0). The subsequant lines of code control the Rover's position, each Rover receives 2 lines of code. The first line of input to the Rover are (x, y) coordinates and the cardinal compass point the Rover is facing when it is place on the Plateau. The second line of code is a string of letters that provide movement instructions
+The inputs to the Rover program are in the form of line inputs. The first line inputted into the program provides the upper-right coordinates, which defines the size of the grid since the lower left-side is assumed to be (0,0). The subsequent lines of code control the Rover's position, each Rover receives 2 lines of code. The first line of input to the Rover are (x, y) coordinates and the cardinal compass point the Rover is facing when it is place on the Plateau. The second line of code is a string of letters that provide movement instructions. Input format and order in shown below:
+
+Plateau Size: 5 5
+Rover initial position: 2 3 E
+Movement instruction string: MLMRM
 
 ### Program Outputs
 
-The output represents a Rover's final position and the direction it is facing.
+The output represents a Rover's final position and the direction it is facing. e.g 3 4 E
 
 ## Approach
 
 The program was developed using a test first approach using Jest to implement the testing. The sequence of development steps are listed below:
 
-| Test                                  | Code                                                                                                                                                                                                                                                                                     |
-| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Plateau                               | setPlateauDimensions function: checks input and creates object of type Plateau to store the grid size                                                                                                                                                                                    |
-| Rover initial position on the Plateau | processInitialPosition function checks validity of the data, creates an object of type RoverPosition that stores the position and direction of the Rover. The direction is stored as a variable of type Direction.                                                                       |
-| Rover move one grid position          | processMoveInput function takes string input and creates an array of type Instruction. moveInstructions function iterates over the array and calls moveRover function if the input string is 'M'. MoveRover function updates the rover position object if is within the Plateau boundary |
-| Rover rotate right                    | add rotateRight function call to moveInstructions function. RotateRight function translates the current direction and updates the rover position object.                                                                                                                                 |
-| Rover rotate right                    | add rotateLeft function call to moveInstructions function. RotateLeft function translates the current direction and updates the rover position object.                                                                                                                                   |
-| Instruction controls sequences        | Uses all functionality to complete input movement instructions                                                                                                                                                                                                                           |
+| Test | code |
+|-----|-------|
+| Plateau | SetPlateauDimensions function: checks input and creates object of type Plateau to store the grid size                                                                                                                                                                                     |
+| Rover initial position on the Plateau | ProcessInitialPosition function checks validity of the data, creates an object of type RoverPosition that stores the position and direction of the Rover. The direction is stored as a variable of type Direction. |
+| Rover move one grid position          | ProcessMoveInput function takes string input and creates an array of type Instruction. moveInstructions function iterates over the array and calls moveRover function if the input string is 'M'. MoveRover function updates the rover position object if is within the Plateau boundary. |
+| Rover rotate right                    | Add rotateRight function call to moveInstructions function. RotateRight function translates the current direction and updates the rover position object. Rover rotate right                                                                                                               | add rotateLeft function call to moveInstructions function. RotateLeft function translates the current direction and updates the rover position object. |
+| Instruction controls sequences        | Uses all functionality to complete input movement instructions                                                                                                                                                                                                                            |
 
 ## Current functionality
 
@@ -75,7 +78,7 @@ The program was developed using a test first approach using Jest to implement th
 
 ## Usage
 
-Program interaction is either via running unit tests or via running the application from the index entry point file.
+Program interaction is either via running unit tests or via running the application from the index entry point file and viewing output to the console.
 
 The run jest tests, at the command prompt enter:
 

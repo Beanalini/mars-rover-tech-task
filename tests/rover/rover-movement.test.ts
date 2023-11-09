@@ -6,7 +6,7 @@ import { RoverPosition } from "../../src/rover/rover.types";
 
 const plateauSize = { x: 5, y: 5 };
 
-
+describe(" evaluates rover movement instructions on the plateau", () => {
   test("rover moves forward 1 grid space from initial placement position", () => {
     // Arrange
     const positionInput = "3 3 N";
@@ -44,7 +44,7 @@ const plateauSize = { x: 5, y: 5 };
       fail("Invalid initial position");
     }
   });
- 
+
   test("rover remains stationary at the boundary until the next rotation and movement instruction take it away from the boundary.", () => {
     // Arrange
     const positionInput = "3 3 E";

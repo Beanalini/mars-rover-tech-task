@@ -14,14 +14,14 @@ console.log(`plateau size: ${gridSize.x} ${gridSize.y}`);
 
 let initialPosition = processInitialPosition(positionInput, gridSize);
 
-console.log("Rover starting position:" + initialPosition);
-
 const instructions = processMoveInput(moveInput);
 console.log(...instructions);
 
 if (initialPosition !== undefined) {
   const rover: RoverPosition = initialPosition;
+  console.log(`Rover start position: ${rover.x} ${rover.y} ${rover.direction}`);
   moveInstructions(rover, instructions, gridSize);
+
   /******output:rover final position******* */
   console.log(`Rover end position: ${rover.x} ${rover.y} ${rover.direction}`);
   /******************************************/
