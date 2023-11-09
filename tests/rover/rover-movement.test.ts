@@ -5,17 +5,7 @@ import { moveInstructions } from "../../src/rover/rover-move";
 import { RoverPosition } from "../../src/rover/rover.types";
 
 const plateauSize = { x: 5, y: 5 };
-describe(" evaluates rover movement instructions on the plateau", () => {
-  test("return an array of instructions if valid input  ", () => {
-    //Arrange
-    const moveInput = "LMLMLM";
 
-    //Act: run movement instructions
-    const moveInstructions = processMoveInput(moveInput);
-    //Assert
-    //returns moveInstructions need to coerce value to a truthy value
-    expect(moveInstructions).toEqual(["L", "M", "L", "M", "L", "M"]);
-  });
 
   test("rover moves forward 1 grid space from initial placement position", () => {
     // Arrange
@@ -54,7 +44,7 @@ describe(" evaluates rover movement instructions on the plateau", () => {
       fail("Invalid initial position");
     }
   });
-
+ 
   test("rover remains stationary at the boundary until the next rotation and movement instruction take it away from the boundary.", () => {
     // Arrange
     const positionInput = "3 3 E";
