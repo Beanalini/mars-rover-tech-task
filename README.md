@@ -1,9 +1,7 @@
 # Mars Rover Project👽
 
-##Contents
-
 - [Description](#description)
-- [Functional Requirements](#requirements)
+- [Functional Requirements](#functional-requirements)
 - [Approach](#approach)
 - [Next Steps](#next-steps)
 - [Tests](#tests)
@@ -45,13 +43,12 @@ The output represents a Rover's final position and the direction it is facing.
 
 The program was developed using a test first approach using Jest to implement the testing. The sequence of development steps are listed below:
 
-| Test                                  | Code                                                                                                                                                                                                                                                                                     |
-| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------- |
-| Plateau                               | setPlateauDimensions function: checks input and creates object of type Plateau to store the grid size                                                                                                                                                                                    |
-| Rover initial position on the Plateau | processInitialPosition function checks validity of the data, creates an object of type RoverPosition that stores the position and direction of the Rover. The direction is stored as a variable of type Direction.                                                                       |
-| Rover move one grid position          | processMoveInput function takes string input and creates an array of type Instruction. moveInstructions function iterates over the array and calls moveRover function if the input string is 'M'. MoveRover function updates the rover position object if is within the Plateau boundary |
-| Rover rotate right                    | add rotateRight function call to moveInstructions function. RotateRight function translates the current direction and updates the rover position object.                                                                                                                                 |
-| Rover rotate right                    | add rotateLeft function call to moveInstructions function. RotateLeft function translates the current direction and updates the rover position object.                                                                                                                                   | Instruction controls sequences | Uses all functionality to complete input movement instructions |
+|Test|Code|
+| Plateau | setPlateauDimensions function: checks input and creates object of type Plateau to store the grid size|  
+| Rover initial position on the Plateau | processInitialPosition function checks validity of the data, creates an object of type RoverPosition that stores the position and direction of the Rover. The direction is stored as a variable of type Direction.|  
+| Rover move one grid position | processMoveInput function takes string input and creates an array of type Instruction. moveInstructions function iterates over the array and calls moveRover function if the input string is 'M'. MoveRover function updates the rover position object if is within the Plateau boundary |
+| Rover rotate right | add rotateRight function call to moveInstructions function. RotateRight function translates the current direction and updates the rover position object.|  
+| Rover rotate right | add rotateLeft function call to moveInstructions function. RotateLeft function translates the current direction and updates the rover position object. | | Instruction controls sequences | Uses all functionality to complete input movement instructions |
 
 ## Current functionality
 
